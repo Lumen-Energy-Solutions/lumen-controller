@@ -11,25 +11,6 @@
 - **Automatización de tareas**: Uso de `Makefile` para simplificar comandos comunes.
 - **Configuración flexible**: Archivos `.env` para una fácil configuración del entorno.
 
-## 📁 Estructura del Proyecto
-
-\`\`\`
-lumen-controller/
-├── src/                  # Código fuente del backend
-├── ui/                   # Código fuente del frontend
-├── .dockerignore         # Archivos y carpetas ignorados por Docker
-├── .env.example          # Ejemplo de archivo de variables de entorno
-├── .gitignore            # Archivos y carpetas ignorados por Git
-├── Dockerfile            # Instrucciones para construir la imagen de Docker
-├── Makefile              # Tareas automatizadas
-├── deploy.txt            # Instrucciones de despliegue
-├── docker-compose.yml    # Configuración de servicios Docker
-├── main.py               # Punto de entrada principal del backend
-├── package.json          # Dependencias y scripts del frontend
-├── requirements.txt      # Dependencias del backend
-└── wsgi.py               # Configuración para servidores WSGI
-\`\`\`
-
 ## 🛠️ Requisitos Previos
 
 - [Docker](https://www.docker.com/)
@@ -41,24 +22,24 @@ lumen-controller/
 
 1. **Clonar el repositorio:**
 
-   \`\`\`bash
+   ```bash
    git clone https://github.com/Lumen-Energy-Solutions/lumen-controller.git
    cd lumen-controller
-   \`\`\`
+   ```
 
 2. **Configurar las variables de entorno:**
 
    Copia el archivo `.env.example` y renómbralo a `.env`. Luego, ajusta las variables según tu entorno.
 
-   \`\`\`bash
+   ```bash
    cp .env.example .env
-   \`\`\`
+   ```
 
 3. **Construir y levantar los contenedores:**
 
-   \`\`\`bash
+   ```bash
    docker-compose up --build
-   \`\`\`
+   ```
 
    Esto iniciará tanto el backend como el frontend en contenedores separados.
 
@@ -70,10 +51,10 @@ lumen-controller/
 
 Para construir y publicar imágenes multiplataforma en Docker Hub, usa los siguientes comandos:
 
-\`\`\`bash
+```bash
 docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t lumensolutions/lumen-controller:latest --push .
 docker buildx build --platform linux/arm/v7 -t lumensolutions/lumen-controller:latest --push .
-\`\`\`
+```
 
 
 ## 📄 Licencia
