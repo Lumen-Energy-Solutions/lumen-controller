@@ -7,7 +7,7 @@ export interface IValve {
   isLoading?: boolean,
   lastUpdate?: string,
   batteryLevel?: number,
-  totalConsumption: number,
+  waterCount: number,
   startedAt?: Date | null
 }
 

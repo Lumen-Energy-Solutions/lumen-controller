@@ -30,7 +30,7 @@ export const useValveStore = create<ValvesStore>((set, get) => ({
         applicationId: valve.applicationId,
         lastUpdate: valve.lastUpdate,
         batteryLevel: valve.batteryLevel,
-        totalConsumption: parseFloat(valve.totalConsumption),
+        waterCount: parseFloat(valve.waterCount) || 0,
         isLoading: valvesPending.some((v: IValvesPending) => v.devEui === valve.devEui),
         startedAt: valvesPending.find((v: IValvesPending) => v.devEui === valve.devEui)?.startedAt ?? null,
       }));

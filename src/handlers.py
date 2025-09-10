@@ -17,7 +17,6 @@ async def process_message(message):
             return
         
         object_data["name"] = device_info.get("deviceName")
-
         updated_ts = update_device(devEui, object_data, object_data.get("controlCode"))
 
         # Enviar datos a todos los clientes WebSocket conectados

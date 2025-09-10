@@ -56,6 +56,17 @@ docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t lumensolu
 docker buildx build --platform linux/arm/v7 -t lumensolutions/lumen-controller:latest --push .
 ```
 
+## Notas:
+La trama para ser manejada debera contener los siguientes atributos para el control code 129:
+- valveStatus: "close" | "open"
+- batteryPercentage: number
+- waterCount: number
+- name: string
+- controlCode: 129
+
+La trama para ser manejada debera contener los siguientes atributos para el control code 132:
+- valveStatus: "close" | "open"
+- controlCode: 132
 
 ## 📄 Licencia
 

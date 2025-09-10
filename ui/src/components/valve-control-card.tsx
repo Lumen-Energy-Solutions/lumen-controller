@@ -4,21 +4,11 @@ import { Badge } from "@/components/ui/badge"
 import { DropletIcon, MapPinIcon, EditIcon, Loader2, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { IValve } from "@/interfaces"
 
-interface Valve {
-  name: string
-  status: boolean
-  location: string
-  devEui: string
-  applicationId: string
-  lastUpdate?: string
-  batteryLevel?: number
-  totalConsumption: number
-  isLoading?: boolean
-}
 
 interface ValveControlCardProps {
-  valve: Valve
+  valve: IValve
   onToggle: () => void
   onEdit: () => void
 }
@@ -79,7 +69,7 @@ export default function ValveControlCard({ valve, onToggle, onEdit }: ValveContr
             </div>
           )}
           <div className="flex flex-col items-center gap-1">
-            <span className="text-3xl font-medium">{valve.totalConsumption.toFixed(2)} <span className="text-sm">m³</span></span>
+            <span className="text-3xl font-medium">{valve.waterCount} <span className="text-sm">m³</span></span>
             <span className="text-xs text-muted-foreground">Consumo total</span>
           </div>
 
